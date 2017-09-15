@@ -1,0 +1,192 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cristhianbonilla.cantantesmedellin.fragments.BookingFragment">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:background="@drawable/bordes_redondos">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="vertical"
+            android:minWidth="1000dp"
+            android:minHeight="1000dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:weightSum="1">
+            <TextView
+                android:text="@string/optenerCotizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+
+                android:id="@+id/tituloDetalles" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="20dp"
+                    android:hint="@string/direccion" />
+            </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:text="@string/seleccione_categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:id="@+id/seleccione_categoria" />
+            <Spinner
+                android:id="@+id/categoria_evento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarSize="10dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/category_event"
+                android:prompt="@string/choose_category"
+                android:layout_margin="30dp"
+                android:layout_weight="0.11">
+
+
+
+            </Spinner>
+
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/poner_hora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+
+                    android:id="@+id/poner_hora" />
+
+                <TimePicker
+                    android:id="@+id/hora_evento"
+                    android:layout_weight="4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:timePickerMode="spinner"/>
+
+                <TextView
+                    android:text="@string/fecha_evento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/fecha_evento_error"
+                    />
+
+                <DatePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/fecha_del_evento"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_contact_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_ciudad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/ciudad"
+                    android:textSize="20dp"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/input_telefono_event"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tel"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textSize="20dp" />
+                </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="@string/mensaje_a_banda"
+                android:textSize="25sp"/>
+            <EditText
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:background="@drawable/bordes_redondos"
+                android:id="@+id/input_decripcion"
+                />
+
+            <TextView
+                android:id="@+id/muchas_imagenes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorAccent"
+
+                />
+            <Button
+                android:id="@+id/bnt_cotizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/optenerCotizacion"
+                android:layout_marginBottom="100dp"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>
+
+

@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Cantantesmedellin</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Salir</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="nombre">Nombre</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_up">Crear</string>
+    <string name="tel">Tel:</string>
+    <string name="tel_fijo">Telefono fijo</string>
+    <string name="descripcion">Descripción</string>
+    <string name="website">http://</string>
+    <!--  <string name="facebook_app_id">239355626577931</string>
+    <string name="fb_login_protocol_scheme">fb239355626577931</string>-->
+    <string name="facebook_app_id">131117294187998</string>
+    <string name="fb_login_protocol_scheme">fb131117294187998</string>
+
+    <string name="envarFotos">Enviar Fotos</string>
+    <string name="video_youtube">Youtube</string>
+    <string name="error_al_crear_el_archivo">Error al subir archivo</string>
+    <string name="error_al_crear_el_archivo2">Error al subir segundo archivo</string>
+    <string name="fiebase_error_login">Error firebase</string>
+    <string name="choose_category">Seleccione una Categoría</string>
+    <string name="facebook">Facebook Url</string>
+    <string name="nombreContacto">Nombre De Contacto</string>
+    <string name="reservar">Reservar</string>
+    <string name="ver_video">Ver Video</string>
+    <string name="comentarios_titulo">Comentarios</string>
+    <string name="bt_orders">prueba</string>
+    <string name="cotizacion">Optener Cotización</string>
+    <string name="direccion">Dirección</string>
+    <string name="optenerCotizacion">Optener Cotización</string>
+    <string name="poner_hora">Hora del evento</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="mensaje_a_banda">Mensaje para el artista</string>
+    <string name="seleccione_categoria">Seleccione la categoria</string>
+    <string name="informacion_lead">Detalles del evento</string>
+    <string name="fecha_evento">Fecha del evento</string>
+    <string name="enviar">Enviar</string>
+    <string name="titulodelcomentario">Titulo del comentario</string>
+    <string-array name="category">
+        <item>Seleccione la categoria</item>
+        <item>Agrupaciones</item>
+        <item>Mariachi</item>
+        <item>Bailarines</item>
+        <item>Coros</item>
+        <item>Cantantes de reggaeton</item>
+        <item>Duetos y Trios</item>
+        <item>Escuelas de música</item>
+        <item>Instrumentales</item>
+        <item>Música infantil</item>
+        <item>Minitecas</item>
+        <item>Orquestas</item>
+        <item>Papayeras</item>
+        <item>Solistas</item>
+        <item>Trovadores</item>
+
+    </string-array>
+
+    <string-array name="category_event">
+        <item>Seleccione la categoria</item>
+        <item>Cumpleaños</item>
+        <item>Boda</item>
+        <item>Quinciañera</item>
+        <item>Baby shower</item>
+        <item>Funeral</item>
+        <item>Despedida</item>
+        <item>Otro</item>
+
+
+    </string-array>
+
+
+</resources>

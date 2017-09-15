@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/cotizaciones"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Cotizaciones enviadas" />
+        <item
+            android:id="@+id/cotizacionesEnviadas"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Cotizaciones Recibidas" />
+        <item
+            android:id="@+id/agrupaciones"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Agrupaciones" />
+        <item
+            android:id="@+id/bailarines"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Bailarines" />
+        <item
+            android:id="@+id/conjunto_vallenatos"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Conjustos Vallenato" />
+        <item
+            android:id="@+id/coros"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Coros" />
+        <item
+            android:id="@+id/cantantes_de_reggaeton"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Cantantes de reggaeton" />
+        <item
+            android:id="@+id/duetos_trios_cuartetos"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Duetos Trios Cuartetos" />
+        <item
+            android:id="@+id/escuela_de_musica"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Escuelas de música" />
+
+        <item
+            android:id="@+id/instrumentales"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Instrumentales" />
+        <item
+            android:id="@+id/musica_infantil"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Música infantil" />
+        <item
+            android:id="@+id/mariachis"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Mariachis" />
+        <item
+            android:id="@+id/minitecas"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Minitecas" />
+        <item
+            android:id="@+id/orquestas"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Orquestas" />
+        <item
+            android:id="@+id/papayeras"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Papayeras" />
+        <item
+            android:id="@+id/solistas"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Solistas" />
+        <item
+            android:id="@+id/trovadores"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Trovadores" />
+
+    </group>
+
+    <item android:title="Nosotros">
+        <menu>
+            <item
+                android:id="@+id/como_vincularse"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Como_vincularse" />
+            <item
+                android:id="@+id/registrarse"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Registrarse" />
+            <item
+                android:id="@+id/terminos_y_condiciones"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Terminos y Condiciones" />
+            <item
+                android:id="@+id/contactenos"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Contacto" />
+
+        </menu>
+    </item>
+
+</menu>

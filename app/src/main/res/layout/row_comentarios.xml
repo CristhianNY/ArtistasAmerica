@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img"
+        android:src="@drawable/ic_liked"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Naturally Flavored Fruit &amp; Herb Detox Water"
+        android:id="@+id/nombre_friend_fb"
+        android:textSize="16sp"
+        android:layout_marginLeft="15dp"
+        android:lines="1"
+        android:paddingTop="10dp"
+        android:ellipsize="marquee"
+        android:layout_alignTop="@+id/img"
+        android:layout_toRightOf="@+id/img"
+        android:layout_toEndOf="@+id/img" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Este Usuario es amigo tuyo en facebook y esta haciendo preguntas  ."
+        android:id="@+id/contenido_review"
+        android:layout_marginRight="15dp"
+        
+        android:paddingBottom="10dp"
+        android:ellipsize="end"
+        android:layout_below="@+id/nombre_friend_fb"
+        android:layout_alignLeft="@+id/nombre_friend_fb"
+        android:layout_alignStart="@+id/nombre_friend_fb" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:isIndicator="true"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_below="@+id/contenido_review"
+        android:layout_alignLeft="@+id/contenido_review"
+        android:layout_alignStart="@+id/contenido_review" />
+
+
+</RelativeLayout>

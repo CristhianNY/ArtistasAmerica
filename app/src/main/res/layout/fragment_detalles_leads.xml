@@ -1,0 +1,162 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cristhianbonilla.cantantesmedellin.fragments.DetallesLeads">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordes_redondos"
+            android:padding="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:text="Titulo del grupo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+
+                    android:id="@+id/tituloDetalles" />
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp" />
+
+                <!-- <EditText
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/content_review"/>
+
+                 <Button
+                     android:id="@+id/btn_enviar_review"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="insertar comentario"/>-->
+                <RelativeLayout
+                    android:id="@+id/caja_video"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bordes_redondos">
+
+                    <TextView
+                        android:id="@+id/informacion_lead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/informacion_lead"
+                        android:textStyle="italic|bold"
+                        android:layout_centerInParent="true"
+                        android:textSize="19dp"
+                        android:layout_margin="@dimen/activity_horizontal_margin"
+                        />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+
+                        >
+
+
+                        <TextView
+                            android:id="@+id/categoria_Lead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quiciañera "
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
+                            android:textSize="19dp"/>
+
+                        <TextView
+                            android:id="@+id/ciudad_lead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medellin"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"/>
+
+                        <TextView
+                            android:id="@+id/fecha_lead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="17/07/2017"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:id="@+id/hora_lead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="13:00 pm"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:id="@+id/direccion_lead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carrera 84 # 34-15"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:id="@+id/telefono_lead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="313 278 1123 "
+                            android:textStyle="bold"
+                            android:layout_marginBottom="10dp"
+                            />
+
+                        <ImageButton
+                            android:id="@+id/llamar_grupo"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/call"
+                            android:padding="0dp"
+                            android:layout_marginBottom="40dp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context="com.cristhianbonilla.cantantesmedellin.fragments.DetailsFragment">
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:minHeight="1000dp"
+        android:minWidth="1000dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/error_estrellas"
+            android:text="Dejanos un comentario y ayuda a otros usuarios a hacer buenas reservas "/>
+
+        <RatingBar
+            android:id="@+id/idRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:isIndicator="false" />
+
+
+        <EditText
+            android:id="@+id/content_review"
+            style="@style/text"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:background="@drawable/bordes_redondos"
+            android:ems="10"
+            android:hint="Escribe tu comentario aquí"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical" />
+
+        <Button
+            android:id="@+id/insertComentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insertar Comentario"/>
+
+        </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+</FrameLayout>

@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "108213172130",
+    "firebase_url": "https://cantantesmedellin-f0d68.firebaseio.com",
+    "project_id": "cantantesmedellin-f0d68",
+    "storage_bucket": "cantantesmedellin-f0d68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108213172130:android:d42adae85162faa0",
+        "android_client_info": {
+          "package_name": "com.cristhianbonilla.cantantesmedellin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108213172130-ukqjms9hulb15hghgjoli5i26e945vaa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cristhianbonilla.cantantesmedellin",
+            "certificate_hash": "e8c1f303bd945b1b067cc4f74cdfeee6f4a572c5"
+          }
+        },
+        {
+          "client_id": "108213172130-j77vfsijh9nsquhs6kue7e1dm1cr72l6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDelpEr37kDomEzY3iOfc4NrJklUG-Cy0Q"
+        },
+        {
+          "current_key": "AIzaSyD1yxkm8K2thWOK-DHVcTmEXVHhRi1GT8Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "108213172130-j77vfsijh9nsquhs6kue7e1dm1cr72l6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
