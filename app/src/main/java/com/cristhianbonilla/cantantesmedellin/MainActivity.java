@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        refGroup.orderByChild("propietario").equalTo(usuario.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        refGroup.orderByChild("propietario").equalTo(usuario.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 

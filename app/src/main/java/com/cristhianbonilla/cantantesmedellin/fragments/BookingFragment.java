@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.cristhianbonilla.cantantesmedellin.MyFirebaseMessagingService;
 import com.cristhianbonilla.cantantesmedellin.R;
 import com.cristhianbonilla.cantantesmedellin.References.References;
 import com.cristhianbonilla.cantantesmedellin.adapter.ComentariosAdapter;
@@ -149,7 +150,7 @@ public class BookingFragment extends DialogFragment implements View.OnClickListe
 
         if(fechaDate.length()== 0 || fecha.getYear()< Calendar.getInstance().get(Calendar.YEAR)
                 || fecha.getMonth()< Calendar.getInstance().get(Calendar.MONTH)
-                || fecha.getDayOfMonth() < Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
+              ){
 
 
             fechaError.setError("La Fecha es invalidad");
@@ -216,6 +217,9 @@ public class BookingFragment extends DialogFragment implements View.OnClickListe
                                           //  getFragmentManager().beginTransaction().replace(R.id.container, new MainFragment()).commit();
                                             ref.push().setValue(lead);
                                             ref2.push().setValue(lead);
+
+
+
                                          //   onDestroyView();
                                             llamarLeads();
 

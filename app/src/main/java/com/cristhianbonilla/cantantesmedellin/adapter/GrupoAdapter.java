@@ -15,6 +15,8 @@ import com.cristhianbonilla.cantantesmedellin.fragments.DetailsFragment;
 import com.cristhianbonilla.cantantesmedellin.fragments.FormNewGroupFragment;
 import com.cristhianbonilla.cantantesmedellin.fragments.MainFragment;
 import com.cristhianbonilla.cantantesmedellin.models.Grupo;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -50,6 +52,8 @@ public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHo
         Picasso.with(this.fragment.getContext()).load(grupo.getUrlimagen()).resize(300,300).into(holder.coverImageView);
         holder.tituloGrupo.setText(grupo.getNombre());
 
+
+       FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
         holder.coverImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,44 +71,53 @@ public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHo
             }
         });
 
-        holder.editar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                String key = grupo.getKey();
-                String nombreGrupo = grupo.getNombre();
-                String telefonoGrupo  = grupo.getCelular();
-                String categoria = grupo.getCategoria();
-                String celular = grupo.getCelular();
-                String descripcion = grupo.getDescripcion();
-                String nombreContacto = grupo.getNombreContacto();
-                String socialF = grupo.getSocialF();
-                String url = grupo.getImagen();
-                String youtube = grupo.getYouTube();
-                String fijo = grupo.getFijo();
-                String email = grupo.getEmail();
-                String propietario = grupo.getPropietario();
+        if(usuario.getUid().equals(grupo.getPropietario())||usuario.getUid().equals("mMugUhhgaZOCUDhVSNHfr4Ax8I83")){
 
-                bundle.putString("key",key);
-                bundle.putString("editar","editar");
-                bundle.putString("nombreGrupo",nombreGrupo);
-                bundle.putString("categoria",categoria);
-                bundle.putString("celular",celular);
-                bundle.putString("descripcion",descripcion);
-                bundle.putString("telefonoGrupo",telefonoGrupo);
-                bundle.putString("socialF",socialF);
-                bundle.putString("url",url);
-                bundle.putString("youtube",youtube);
-                bundle.putString("fijo",fijo);
-                bundle.putString("email",email);
-                bundle.putString("nombreContacto",nombreContacto);
-                bundle.putString("propietario",propietario);
+            holder.editar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    String key = grupo.getKey();
+                    String nombreGrupo = grupo.getNombre();
+                    String telefonoGrupo  = grupo.getCelular();
+                    String categoria = grupo.getCategoria();
+                    String celular = grupo.getCelular();
+                    String descripcion = grupo.getDescripcion();
+                    String nombreContacto = grupo.getNombreContacto();
+                    String socialF = grupo.getSocialF();
+                    String url = grupo.getImagen();
+                    String youtube = grupo.getYouTube();
+                    String fijo = grupo.getFijo();
+                    String email = grupo.getEmail();
+                    String propietario = grupo.getPropietario();
 
-                FormNewGroupFragment formNewGroupFragment = new FormNewGroupFragment();
-                formNewGroupFragment.setArguments(bundle);
-                formNewGroupFragment.show(fragment.getFragmentManager(),"Editar");
-            }
-        });
+                    bundle.putString("key",key);
+                    bundle.putString("editar","editar");
+                    bundle.putString("nombreGrupo",nombreGrupo);
+                    bundle.putString("categoria",categoria);
+                    bundle.putString("celular",celular);
+                    bundle.putString("descripcion",descripcion);
+                    bundle.putString("telefonoGrupo",telefonoGrupo);
+                    bundle.putString("socialF",socialF);
+                    bundle.putString("url",url);
+                    bundle.putString("youtube",youtube);
+                    bundle.putString("fijo",fijo);
+                    bundle.putString("email",email);
+                    bundle.putString("nombreContacto",nombreContacto);
+                    bundle.putString("propietario",propietario);
+
+                    FormNewGroupFragment formNewGroupFragment = new FormNewGroupFragment();
+                    formNewGroupFragment.setArguments(bundle);
+                    formNewGroupFragment.show(fragment.getFragmentManager(),"Editar");
+                }
+            });
+        }else{
+
+            holder.editar.setVisibility(View.GONE);
+
+
+        }
+
 
 
 

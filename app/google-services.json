@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "108213172130-qqn8crvkhutiqir99rs38eojvek1lcd1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cristhianbonilla.cantantesmedellin",
+            "certificate_hash": "ac4a851e89af8de8b1c4dacca0b9096bc7a6fe22"
+          }
+        },
+        {
           "client_id": "108213172130-ukqjms9hulb15hghgjoli5i26e945vaa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
