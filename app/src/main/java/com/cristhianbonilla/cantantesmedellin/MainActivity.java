@@ -178,7 +178,12 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 
     @Override
@@ -244,6 +249,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.agrupaciones) {
+            setActionBarTitle("Agrupaciones");
             Bundle bundle = new Bundle();
             String categoria = "Agrupaciones";
             bundle.putString("Agrupaciones",categoria);
@@ -259,6 +265,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.conjunto_vallenatos) {
+            setActionBarTitle("Vallenatos");
             Bundle bundle = new Bundle();
             String categoria = "Conjuntos vallenatos";
             bundle.putString("coros",categoria);
@@ -269,6 +276,7 @@ public class MainActivity extends AppCompatActivity
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
 
         } else if (id == R.id.coros) {
+            setActionBarTitle("Coros");
             Bundle bundle = new Bundle();
             String categoria = "Coros";
             bundle.putString("coros",categoria);
@@ -279,6 +287,7 @@ public class MainActivity extends AppCompatActivity
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
 
         } else if (id == R.id.cantantes_de_reggaeton) {
+            setActionBarTitle("Reggaeton");
             Bundle bundle = new Bundle();
             String categoria = "Cantantes de reggaeton";
             bundle.putString("categoria",categoria);
@@ -290,6 +299,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.duetos_trios_cuartetos) {
+            setActionBarTitle("Trios y Duetos");
             Bundle bundle = new Bundle();
             String categoria = "Duetos y Trios";
             bundle.putString("categoria",categoria);
@@ -300,14 +310,14 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.cotizaciones){
-
+            setActionBarTitle("Cotizaciones");
             LeadListFragment leadListFragment = new LeadListFragment();
 
 
             getSupportFragmentManager().beginTransaction().replace(R.id.container, leadListFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
         }else if(id==R.id.cotizacionesEnviadas){
-
+            setActionBarTitle("Cotizaciones enviadas");
             LeadListFragmentR leadListFragment = new LeadListFragmentR();
 
 
@@ -315,6 +325,7 @@ public class MainActivity extends AppCompatActivity
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
         }
         else if (id == R.id.bailarines) {
+            setActionBarTitle("Bailarines");
             Bundle bundle = new Bundle();
             String categoria = "Bailarines";
             bundle.putString("categoria",categoria);
@@ -326,6 +337,7 @@ public class MainActivity extends AppCompatActivity
 
         }
         else if (id == R.id.escuela_de_musica) {
+            setActionBarTitle("Escuela de musica");
             Bundle bundle = new Bundle();
             String categoria = "Escuelas de música";
             bundle.putString("categoria",categoria);
@@ -336,6 +348,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.instrumentales) {
+            setActionBarTitle("Intrumentales");
             Bundle bundle = new Bundle();
             String categoria = "Instrumentales";
             bundle.putString("categoria",categoria);
@@ -346,6 +359,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.musica_infantil) {
+            setActionBarTitle("Musica Infantil");
             Bundle bundle = new Bundle();
             String categoria = "Música infantil";
             bundle.putString("categoria",categoria);
@@ -356,6 +370,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.mariachis) {
+            setActionBarTitle("Mariachis");
             Bundle bundle = new Bundle();
             String categoria = "Mariachi";
             bundle.putString("categoria",categoria);
@@ -366,6 +381,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.minitecas) {
+            setActionBarTitle("Minitecas");
             Bundle bundle = new Bundle();
             String categoria = "Minitecas";
             bundle.putString("categoria",categoria);
@@ -376,6 +392,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.orquestas) {
+            setActionBarTitle("Orquestas");
             Bundle bundle = new Bundle();
             String categoria = "Orquestas";
             bundle.putString("categoria",categoria);
@@ -386,6 +403,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.papayeras) {
+            setActionBarTitle("Papayeras");
             Bundle bundle = new Bundle();
             String categoria = "Papayeras";
             bundle.putString("categoria",categoria);
@@ -396,6 +414,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.solistas) {
+            setActionBarTitle("Solistas");
             Bundle bundle = new Bundle();
             String categoria = "Solistas";
             bundle.putString("categoria",categoria);
@@ -406,6 +425,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.trovadores) {
+            setActionBarTitle("Trovadores");
             Bundle bundle = new Bundle();
             String categoria = "Trovadores";
             bundle.putString("categoria",categoria);
@@ -418,6 +438,7 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.duetos_trios_cuartetos) {
+            setActionBarTitle("Duetos y trios");
             Bundle bundle = new Bundle();
             String categoria = "Duetos y Trios";
             bundle.putString("categoria",categoria);
@@ -428,16 +449,19 @@ public class MainActivity extends AppCompatActivity
 
 
         }else if (id == R.id.registrarse) {
+            setActionBarTitle("Registro");
             Bundle bundle = new Bundle();
             String categoria = "registarse";
             bundle.putString("categoria",categoria);
 
         }else if (id == R.id.terminos_y_condiciones) {
+            setActionBarTitle("Terminos Y Condiciones");
             Bundle bundle = new Bundle();
             String categoria = "TerminosYcondiciones";
             bundle.putString("categoria",categoria);
 
         }else if (id == R.id.contactenos) {
+            setActionBarTitle("Contactenos");
             Bundle bundle = new Bundle();
             String categoria = "contantenos";
             bundle.putString("categoria",categoria);

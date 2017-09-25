@@ -3,13 +3,20 @@ package com.cristhianbonilla.cantantesmedellin.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cristhianbonilla.cantantesmedellin.MainActivity;
 import com.cristhianbonilla.cantantesmedellin.R;
 import com.cristhianbonilla.cantantesmedellin.References.References;
 import com.cristhianbonilla.cantantesmedellin.adapter.GrupoAdapter;
@@ -26,7 +33,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements SearchView.OnQueryTextListener {
 
     private RecyclerView recyclerView;
     private GrupoAdapter adapter;
@@ -83,7 +90,21 @@ public class MainFragment extends Fragment {
 
                 return v;
     }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_buscar, menu);
+
+        final MenuItem item = menu.findItem(R.id.action_search);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(this);
+
+    }
     private void cargarTodosLosGrupos(String categoria) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref = database.getReference(References.GRUPOS);
@@ -124,6 +145,34 @@ public class MainFragment extends Fragment {
         });
 
 
+
+
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+
+        newText = newText.toLowerCase();
+        ArrayList<Grupo> newList = new ArrayList<>();
+
+        for (Grupo grupo2 : grupos){
+            String titulo = grupo2.getNombre().toLowerCase();
+
+            if(titulo.contains(newText)){
+                newList.add(grupo2);
+            }
+
+            adapter.setFilter(newList);
+
+        }
+
+
+
+        return true;
+    }
 }

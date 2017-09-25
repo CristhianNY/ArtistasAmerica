@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -59,9 +60,11 @@ public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHo
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 String key = grupo.getKey();
+                String propietario = grupo.getPropietario();
                 String nombreGrupo = grupo.getNombre();
                 String telefonoGrupo  = grupo.getCelular();
                 bundle.putString("key",key);
+                bundle.putString("propietario",propietario );
                 bundle.putString("nombreGrupo",nombreGrupo);
                 bundle.putString("telefonoGrupo",telefonoGrupo);
                 bundle.putString("nombreGrupo",nombreGrupo);
@@ -124,9 +127,22 @@ public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHo
 
     }
 
+
+
     @Override
     public int getItemCount() {
         return grupos.size();
+    }
+
+    public void setFilter(List<Grupo> newList) {
+
+        grupos = new ArrayList<>();
+
+        grupos.addAll(newList);
+        notifyDataSetChanged();
+
+
+
     }
 
     public static class GruposViewHolder extends RecyclerView.ViewHolder{
@@ -140,5 +156,6 @@ public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHo
             tituloGrupo = (TextView) itemView.findViewById(R.id.tituloGrupo);
             editar = (ImageView) itemView.findViewById(R.id.edit_grupo);
         }
+
     }
 }

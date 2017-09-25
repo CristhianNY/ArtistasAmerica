@@ -83,7 +83,7 @@ public class DetailsFragment extends DialogFragment implements BookingFragment.C
     private TextView contentDescripcion , numeroCelular;
     private Button btnCotizar,verComentarios, insertComentario;
     private String nombreGrupo;
-    private String telefonoGrupo;
+    private String telefonoGrupo, propietario;
     private ImageButton rightNav, leftNav;
 
 
@@ -119,6 +119,10 @@ public class DetailsFragment extends DialogFragment implements BookingFragment.C
         key = this.getArguments().getString("key");
         nombreGrupo = this.getArguments().getString("nombreGrupo");
         telefonoGrupo = this.getArguments().getString("telefonoGrupo");
+        propietario = this.getArguments().getString("propietario");
+
+        usuario = FirebaseAuth.getInstance().getCurrentUser();
+
 
 
         rightNav = (ImageButton) v.findViewById(R.id.right_nav);
@@ -228,6 +232,13 @@ public class DetailsFragment extends DialogFragment implements BookingFragment.C
 
 
       btnInsertarReview = (Button) v.findViewById(R.id.btn_enviar_review);
+        if(usuario.getUid().equals(propietario)){
+
+
+            btnInsertarReview.setVisibility(View.GONE);
+            btnCotizar.setVisibility(View.GONE);
+
+        }
         btnInsertarReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -386,7 +397,7 @@ public class DetailsFragment extends DialogFragment implements BookingFragment.C
                                                     me.optString("name"), new Date().toString(),comentariokey,usuario.getUid(),contenido,key,valorCalificacion);
 
                                          //   contectReview.setText("");
-                                            ref.push().setValue(comment);
+                                            ref.child(usuario.getUid()).setValue(comment);
                                         }
 
                                         @Override
