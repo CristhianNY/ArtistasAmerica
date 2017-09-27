@@ -42,10 +42,12 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,  BookingFragment.Communicator   {
     private DatabaseReference refGroup;
-    private ImageView imagenDePerfil;
+    private ImageView  imagenDePerfil;
     public static final  String GRUPO = "grupos";
     private FirebaseUser usuario;
 
@@ -128,8 +130,19 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+      //  imagenDePerfil = (ImageView) findViewById(R.id.imagen_de_perfil);
 
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        View hView =  navigationView.getHeaderView(0);
+        imagenDePerfil = (ImageView) hView.findViewById(R.id.imagen_de_perfil);
         if (AccessToken.getCurrentAccessToken() != null) {
 
             GraphRequest request = GraphRequest.newMeRequest(
@@ -140,8 +153,10 @@ public class MainActivity extends AppCompatActivity
                             if (AccessToken.getCurrentAccessToken() != null) {
 
                                 if (me != null) {
-                                    imagenDePerfil = (ImageView) findViewById(R.id.imagen_de_perfil);
+
+
                                     String profileImageUrl = ImageRequest.getProfilePictureUri(me.optString("id"), 100, 100).toString();
+
                                     Picasso.with(getApplicationContext()).load(profileImageUrl).resize(200,200).into(imagenDePerfil);
 
 
@@ -151,15 +166,6 @@ public class MainActivity extends AppCompatActivity
                     });
             GraphRequest.executeBatchAsync(request);
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         Bundle bundle = new Bundle();
         String categoria = "Mariachi";
