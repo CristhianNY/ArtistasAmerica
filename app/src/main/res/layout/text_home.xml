@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text='El apellido Bonilla es muy antiguo y viene de la peninula ibérica o la zona castellana. "Diccionario heráldico y nobiliario de los reinos de España", el apellido tuvo su primitiva casa solar en Castilla. Posteriormente el apellido se extendió por otras zonas de la Península Ibérica. APELLIDOS DERIVADOS los apellidos siguientes como derivados: Bonillo y Bonillas. el mismo origen, historia y escudo de armas. LINAJE La historia del apellido Bonilla cabe remontarla en antiguos tiempos de la Reconquista donde los ejércitos cristianos ocupaban las tierras que durante siglos habían sido dominadas por los musulmanes. En aquella época era lógico que la repoblación de las tierras ocupadas se dieran entre los caballeros que ayudasen a los reyes en las conquistas. Personajes llamados Bonilla recibieron solares y tierras, estableciéndose el linaje en aquellos lugares. El apellido estuvo presente en la conquista y posterior colonización de América, donde personajes llamados Bonilla participaron en las hazañas. Las ramas más numerosas del apellido procede de difentes pueblos de la provincia de Toledo como serían Talavera de la Reina y La Pueblanueva. Otros Bonilla muy importantes proceden de Aragón y se establecen en Tarazona y Zaragoza. Los Bonilla de Andalucía, con rama en Sevilla y Granada aparecen documentados en la obra "Apellidos y Escudos sevillanos y corbobeses que pasaron a Indias". Los topónimos Bonilla se refieren especialmente a ciudades y pueblos. Los topónimos Bonilla referentes a accidentes geográficos son prácticamente inexistentes. El topónimo más importante es el municipio llamado Bonilla, en la provincia de Cuenca. EL APELLIDO HOY El apellido Bonilla es uno de los más abundantes de la geografía española, encontrándose regularmente repartido por todas las regiones de España. Cabe destacar que el apellido enraizó desde lejanos tiempos en tierras de América Latina, y en la actualidad se encuentra ámpliamente representado en el Nuevo Continente. En lo referente a tierras catalanas, el apellido es especialmente abundante en las ciudades de las grandes areas metropolitanas de España. Hay en toda la Península y Canarias unas 5000 familias que se apellidan Bonilla.'/>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

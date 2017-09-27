@@ -13,7 +13,7 @@ public class Grupo {
     }
 
     private String nombre , imagen, celular,fijo,email, nombreContacto, califocacion,
-            propietario,categoria, key, urlimagen,youTube,url,socialF,descripcion;
+            propietario,categoria, key, urlimagen,youTube,url,socialF,descripcion,destacado;
 
     public String getUrlimagen() {
         return urlimagen;
@@ -56,7 +56,7 @@ public class Grupo {
     }
 
     public Grupo(String nombre, String nombreContacto, String email, String celular, String fijo, String socialF, String youTube,
-                 String imagen, String descripcion, String categoria, String key, String urlimagen, String propietario
+                 String imagen, String descripcion, String categoria, String key, String urlimagen, String propietario, String destacado
 
     ) {
         this.descripcion = descripcion;
@@ -73,7 +73,16 @@ public class Grupo {
         this.imagen= imagen;
         this.urlimagen = urlimagen;
         this.propietario = propietario;
+        this.destacado = destacado;
 
+    }
+
+    public String getDestacado() {
+        return destacado;
+    }
+
+    public void setDestacado(String destacado) {
+        this.destacado = destacado;
     }
 
     public String getCalifocacion() {

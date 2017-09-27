@@ -60,6 +60,7 @@ public class MainFragment extends Fragment implements SearchView.OnQueryTextList
 
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(),2);
 
+
       /**layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {

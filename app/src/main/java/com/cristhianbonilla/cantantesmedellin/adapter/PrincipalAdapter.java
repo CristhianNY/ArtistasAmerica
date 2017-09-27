@@ -2,7 +2,6 @@ package com.cristhianbonilla.cantantesmedellin.adapter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,52 +12,46 @@ import android.widget.TextView;
 import com.cristhianbonilla.cantantesmedellin.R;
 import com.cristhianbonilla.cantantesmedellin.fragments.DetailsFragment;
 import com.cristhianbonilla.cantantesmedellin.fragments.FormNewGroupFragment;
-import com.cristhianbonilla.cantantesmedellin.fragments.MainFragment;
-import com.cristhianbonilla.cantantesmedellin.fragments.Principal;
 import com.cristhianbonilla.cantantesmedellin.models.Grupo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ASUS on 2/07/2017.
+ * Created by cali1 on 26/09/2017.
  */
 
-public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHolder> {
-   private List<Grupo> grupos;
-    private Fragment fragment;
-    private int contdor = 0;
+public class PrincipalAdapter extends RecyclerView.Adapter<PrincipalAdapter.PrincipalViewHolder>{
 
-    public GrupoAdapter(List<Grupo> grupos, MainFragment mainFragment) {
+    private List<Grupo> listaGruposDestacados;
+    private Fragment  fragment;
 
-        this.grupos = grupos;
-        this.fragment = mainFragment;
 
+    public PrincipalAdapter(List<Grupo> listaGruposDestacados, Fragment fragment) {
+        this.listaGruposDestacados = listaGruposDestacados;
+        this.fragment = fragment;
     }
 
-
-
-
     @Override
-    public GruposViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PrincipalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_group,parent,false);
-        GruposViewHolder holder = new GruposViewHolder(v);
+        PrincipalAdapter.PrincipalViewHolder holder = new PrincipalAdapter.PrincipalViewHolder(v);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(GruposViewHolder holder, int position) {
-        final Grupo grupo = grupos.get(position);
+    public void onBindViewHolder(PrincipalViewHolder holder, int position) {
+
+        final Grupo grupo = listaGruposDestacados.get(position);
         grupo.getImagen();
         Picasso.with(this.fragment.getContext()).load(grupo.getUrlimagen()).resize(300,300).into(holder.coverImageView);
         holder.tituloGrupo.setText(grupo.getNombre());
 
 
-       FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
         holder.coverImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,40 +119,22 @@ public class GrupoAdapter extends RecyclerView.Adapter<GrupoAdapter.GruposViewHo
         }
 
 
-
-
-
     }
-
-
 
     @Override
     public int getItemCount() {
-        return grupos.size();
+        return listaGruposDestacados.size();
     }
 
-    public void setFilter(List<Grupo> newList) {
-
-        grupos = new ArrayList<>();
-
-        grupos.addAll(newList);
-        notifyDataSetChanged();
-
-
-
-    }
-
-    public static class GruposViewHolder extends RecyclerView.ViewHolder{
-
+    public static class PrincipalViewHolder extends RecyclerView.ViewHolder{
         private ImageView coverImageView,editar;
         private TextView tituloGrupo;
 
-        public GruposViewHolder(View itemView) {
+        public PrincipalViewHolder(View itemView) {
             super(itemView);
             coverImageView = (ImageView) itemView.findViewById(R.id.coverImageView);
             tituloGrupo = (TextView) itemView.findViewById(R.id.tituloGrupo);
             editar = (ImageView) itemView.findViewById(R.id.edit_grupo);
         }
-
     }
 }

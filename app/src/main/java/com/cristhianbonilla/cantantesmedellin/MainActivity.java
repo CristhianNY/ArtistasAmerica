@@ -2,13 +2,10 @@ package com.cristhianbonilla.cantantesmedellin;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
+//import android.support.design.widget.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,18 +20,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.cristhianbonilla.cantantesmedellin.fragments.BookingFragment;
-import com.cristhianbonilla.cantantesmedellin.fragments.DetailsFragment;
 import com.cristhianbonilla.cantantesmedellin.fragments.FormNewGroupFragment;
 import com.cristhianbonilla.cantantesmedellin.fragments.LeadListFragment;
 import com.cristhianbonilla.cantantesmedellin.fragments.LeadListFragmentR;
 import com.cristhianbonilla.cantantesmedellin.fragments.MainFragment;
-import com.cristhianbonilla.cantantesmedellin.models.Lead;
-import com.cristhianbonilla.cantantesmedellin.models.Usuario;
+import com.cristhianbonilla.cantantesmedellin.fragments.Principal;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.internal.ImageRequest;
 import com.facebook.login.LoginManager;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -64,8 +60,15 @@ public class MainActivity extends AppCompatActivity
         refGroup = FirebaseDatabase.getInstance().getReference(GRUPO);
 
         if (usuario.getEmail().equals("cali1708@hotmail.com")) {
+            //final View actionB = findViewById(R.id.action_b);
 
+
+
+            final FloatingActionsMenu multiple = (FloatingActionsMenu) findViewById(R.id.multiple_buton);
+          //  final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
             final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+            fab.setIcon(R.drawable.agregargrupo);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -77,7 +80,9 @@ public class MainActivity extends AppCompatActivity
                     FormNewGroupFragment dialog = FormNewGroupFragment.newInstance();
                     dialog.setArguments(bundle);
                     dialog.show(ft, "Tag");
-                    fab.show();
+                    fab.setVisibility(View.VISIBLE);
+                    multiple.setVisibility(View.VISIBLE);
+
                 }
             });
 
@@ -86,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         } else {
 
 
-
+            final FloatingActionsMenu multiple = (FloatingActionsMenu) findViewById(R.id.multiple_buton);
         refGroup.orderByChild("propietario").equalTo(usuario.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -94,7 +99,9 @@ public class MainActivity extends AppCompatActivity
                 if (dataSnapshot.exists()) {
                     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-                    fab.hide();
+                    fab.setVisibility(View.GONE);
+                    multiple.setVisibility(View.GONE);
+
 
                 } else {
                     final Bundle bundle = new Bundle();
@@ -157,9 +164,10 @@ public class MainActivity extends AppCompatActivity
         Bundle bundle = new Bundle();
         String categoria = "Mariachi";
         bundle.putString("categoria",categoria);
-        MainFragment mainFragment = new MainFragment();
-        mainFragment.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, mainFragment)
+        Principal principalFragment = new Principal();
+     //  MainFragment mainFragment = new MainFragment();
+       // principalFragment.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, principalFragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
 
     }
@@ -242,9 +250,10 @@ public class MainActivity extends AppCompatActivity
             Bundle bundle = new Bundle();
             String categoria = "Mariachi";
             bundle.putString("categoria",categoria);
-            MainFragment mainFragment = new MainFragment();
-            mainFragment.setArguments(bundle);
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, mainFragment)
+            Principal principalFragment = new Principal();
+            //  MainFragment mainFragment = new MainFragment();
+            // principalFragment.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, principalFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).addToBackStack(null).commit();
 
 

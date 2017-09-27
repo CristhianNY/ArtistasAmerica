@@ -649,7 +649,7 @@ public class FormNewGroupFragment extends DialogFragment {
                             Grupo grupo = new Grupo(nombre.getText().toString(),contactName.getText().toString(),
                                     email.getText().toString(),celular.getText().toString(),fijo.getText().toString(),
                                     socialf.getText().toString(),youtube.getText().toString(),url.getText().toString()
-                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),clave,dataSnapshot.getValue().toString(),usuario.getUid());
+                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),clave,dataSnapshot.getValue().toString(),usuario.getUid(),"no");
 
 
 
@@ -706,7 +706,7 @@ public class FormNewGroupFragment extends DialogFragment {
                                 Grupo grupo = new Grupo(nombre.getText().toString(),contactName.getText().toString(),
                                         email.getText().toString(),celular.getText().toString(),fijo.getText().toString(),
                                         socialf.getText().toString(),youtube.getText().toString(),url.getText().toString()
-                                        ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),clave,taskSnapshot.getDownloadUrl().toString(),usuario.getUid());
+                                        ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),clave,taskSnapshot.getDownloadUrl().toString(),usuario.getUid(),"no");
 
 
 
@@ -804,7 +804,7 @@ public class FormNewGroupFragment extends DialogFragment {
                             Grupo grupo = new Grupo(nombre.getText().toString(),contactName.getText().toString(),
                                     email.getText().toString(),celular.getText().toString(),fijo.getText().toString(),
                                     socialf.getText().toString(),youtube.getText().toString(),url.getText().toString()
-                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),clave,taskSnapshot.getDownloadUrl().toString(),usuario.getUid());
+                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),clave,taskSnapshot.getDownloadUrl().toString(),usuario.getUid(),"no");
 
 
 
@@ -908,7 +908,7 @@ public class FormNewGroupFragment extends DialogFragment {
                             Grupo grupo = new Grupo(nombre.getText().toString(),contactName.getText().toString(),
                                     email.getText().toString(),celular.getText().toString(),fijo.getText().toString(),
                                     socialf.getText().toString(),youtube.getText().toString(),url.getText().toString()
-                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),keyGroup,taskSnapshot.getDownloadUrl().toString(),usuario.getUid());
+                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),keyGroup,taskSnapshot.getDownloadUrl().toString(),usuario.getUid(),"no");
 
 
 
@@ -991,7 +991,7 @@ public class FormNewGroupFragment extends DialogFragment {
                             Grupo grupo = new Grupo(nombre.getText().toString(),contactName.getText().toString(),
                                     email.getText().toString(),celular.getText().toString(),fijo.getText().toString(),
                                     socialf.getText().toString(),youtube.getText().toString(),url.getText().toString()
-                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),keyGroup,taskSnapshot.getDownloadUrl().toString(),usuario.getUid());
+                                    ,descripcion.getText().toString(),categoria.getSelectedItem().toString(),keyGroup,taskSnapshot.getDownloadUrl().toString(),usuario.getUid(),"no");
 
 
 

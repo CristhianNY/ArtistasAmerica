@@ -52,6 +52,7 @@ dependencies {
     compile 'com.basgeekball:awesome-validation:2.0'
     compile 'com.theartofdev.edmodo:android-image-cropper:2.4.+'
     compile 'com.daprlabs.aaron:cardstack:0.3.1-beta0'
+    compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'jp.wasabeef:blurry:2.0.2'
     testCompile 'junit:junit:4.12'
 }
